@@ -88,7 +88,7 @@ function App() {
     console.log(personalSignResult, "personalSignResult");
   };
   const handleDisconnect = ()=>{
-     await universalUi?.current?.disconnect();
+     universalUi?.current?.disconnect();
   }
   return (
     <>
