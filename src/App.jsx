@@ -37,9 +37,9 @@ function App() {
       namespaces: {
         eip155: {
           chains: ["eip155:1"],
-          // rpcMap: {
-          //   1: "https://rpc", // set your own rpc url
-          // },
+          rpcMap: {
+            1: "https://rpc.flashbots.net", // set your own rpc url
+          },
           defaultChain: "1",
         },
       },
