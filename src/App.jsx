@@ -101,7 +101,7 @@ function App() {
       <br />
       <br />
       <br />
-      <Button onClick={handlePersonalSign} disable={!isConnected}>personal sign</Button>
+      <Button onClick={handlePersonalSign} >personal sign</Button>
       <br />
       <h3>Sign Result</h3>
       <p className='text'>{signResult}</p>
