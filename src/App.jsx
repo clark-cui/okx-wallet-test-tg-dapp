@@ -36,10 +36,10 @@ function App() {
     const session = await universalUi?.current?.openModal({
       namespaces: {
         eip155: {
-          chains: ["eip155:1", "eip155:xxx"],
-          rpcMap: {
-            1: "https://rpc", // set your own rpc url
-          },
+          chains: ["eip155:1"],
+          // rpcMap: {
+          //   1: "https://rpc", // set your own rpc url
+          // },
           defaultChain: "1",
         },
       },
