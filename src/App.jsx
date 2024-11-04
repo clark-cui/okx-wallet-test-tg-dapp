@@ -99,15 +99,18 @@ function App() {
         {text}
       </Button>
       <br />
+      <br />
       <Input
         placeholder="sign message"
         value={signText}
         onChange={handleTextInput}
       />
+      <br />
+      <br />
       <Button onClick={handlePersonalSign}>personal sign</Button>
       <br />
       <h3>Sign Result</h3>
-      <textarea>{signResult}</textarea>
+      <p>{signResult}</p>
     </>
   );
 }
