@@ -89,7 +89,7 @@ function App() {
     console.log(personalSignResult, "personalSignResult");
   };
   const handleTextInput = (e) => {
-    setSignResult(e.target.value);
+    setSignText(e.target.value);
   };
   return (
     <>
