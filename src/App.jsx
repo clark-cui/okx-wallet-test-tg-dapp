@@ -26,6 +26,10 @@ function App() {
   };
 
   useEffect(() => {
+    document.createElement("script");
+    scriptTag.src = "https://telegram.org/js/telegram-web-app.js";
+    scriptTag.id = "tgsdk";
+    document.getElementsByTagName('head')[0].appendChild(scriptTag);
     initFunc();
   }, []);
 
