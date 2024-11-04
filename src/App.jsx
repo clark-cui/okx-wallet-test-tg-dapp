@@ -68,7 +68,7 @@ function App() {
     }
     return [
       "Conected",
-      `wallet address is ${universalUi?.current?.session?.namespaces?.accounts[0]}`,
+      `wallet address is ${universalUi?.current?.session?.namespaces?.accounts?.[0]}`,
     ];
   }, [universalUi?.current?.session]);
 
