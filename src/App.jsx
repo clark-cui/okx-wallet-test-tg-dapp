@@ -87,6 +87,9 @@ function App() {
     setSignResult(personalSignResult);
     console.log(personalSignResult, "personalSignResult");
   };
+  const handleOpenWallet = ()=>{
+     window.Telegram?.WebApp?.openTelegramLink('https://t.me/OKX_WALLET_BOT/start');
+  }
 
   return (
     <>
@@ -101,6 +104,10 @@ function App() {
       <br />
       <h3>Sign Result</h3>
       <p className='text'>{signResult}</p>
+      <br />
+      <br />
+      <Button onClick={handleOpenWallet}>open wallet</Button>
+      <br />
     </>
   );
 }
