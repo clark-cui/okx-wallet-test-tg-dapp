@@ -65,7 +65,7 @@ function App() {
   }, [universalUi?.current?.session]);
 
   const handlePersonalSign = async () => {
-    const chain = "eip155:1";
+    const chain = "eip155:43114";
     const data = {
       method: "personal_sign",
       params: [
