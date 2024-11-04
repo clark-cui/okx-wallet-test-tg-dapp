@@ -91,7 +91,7 @@ function App() {
   return (
     <>
       <h1 className="title">Dapp Demo</h1>
-      <h3>{text2}</h3>
+      <p className='text'>{text2}</p>
       <Button type="primary" onClick={handleConnect} disabled={isConnected}>
         {text}
       </Button>
@@ -100,7 +100,7 @@ function App() {
       <Button onClick={handlePersonalSign}>personal sign</Button>
       <br />
       <h3>Sign Result</h3>
-      <p>{signResult}</p>
+      <p className='text'>{signResult}</p>
     </>
   );
 }
