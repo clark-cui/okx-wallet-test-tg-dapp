@@ -54,7 +54,7 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 .text{
-  width: 340px;
+  word-break: break-all;
 }
 
 @media (prefers-color-scheme: light) {
