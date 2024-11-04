@@ -58,14 +58,14 @@ function App() {
   };
 
   const [text, text2] = useMemo(() => {
-    if (!universalUi?.current?.session) {
+    if (!isConnected) {
       return [`Connect Wallet`, "no wallet"];
     }
     return [
       "Conected",
       `wallet address is ${universalUi?.current?.session?.namespaces?.eip155?.accounts?.[0]}`,
     ];
-  }, [universalUi?.current?.session]);
+  }, [isConnected,universalUi?.current?.session]);
 
   const handlePersonalSign = async () => {
     const chain = "eip155:43114";
