@@ -86,7 +86,7 @@ function App() {
   const handleDisconnect = ()=>{
      universalUi?.current?.disconnect();
      setIsConnected(false);
-
+     setSignResult('');
   }
   return (
     <>
