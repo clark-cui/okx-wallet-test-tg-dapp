@@ -30,10 +30,6 @@ function App() {
   };
 
   useEffect(() => {
-    //  const scriptTag =  document.createElement("script");
-    //   scriptTag.src = "https://telegram.org/js/telegram-web-app.js";
-    //   scriptTag.id = "tgsdk";
-    //   document.getElementsByTagName('head')[0].appendChild(scriptTag);
     initFunc();
   }, []);
 
@@ -89,6 +85,8 @@ function App() {
   };
   const handleDisconnect = ()=>{
      universalUi?.current?.disconnect();
+     setIsConnected(false);
+
   }
   return (
     <>
@@ -103,7 +101,7 @@ function App() {
       <br />
       <br />
       <br />
-      <Button onClick={handlePersonalSign}>personal sign</Button>
+      <Button onClick={handlePersonalSign} disable={!isConnected}>personal sign</Button>
       <br />
       <h3>Sign Result</h3>
       <p className='text'>{signResult}</p>
