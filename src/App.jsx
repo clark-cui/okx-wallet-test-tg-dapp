@@ -1,7 +1,6 @@
 import { useState, useRef, useEffect, useMemo } from "react";
-import { Button, Input } from "antd";
+import { Button } from "antd";
 import { OKXUniversalConnectUI, THEME } from "@okxconnect/ui";
-import hexer from "browser-string-hexer";
 
 import "./App.css";
 
@@ -9,7 +8,6 @@ function App() {
   const universalUi = useRef(null);
   const [isConnected, setIsConnected] = useState(false);
   const [signResult, setSignResult] = useState("");
-  const [signText, setSignText] = useState("");
   const initFunc = async () => {
     universalUi.current = await OKXUniversalConnectUI.init({
       dappMetaData: {
@@ -78,7 +76,9 @@ function App() {
     const chain = "eip155:43114";
     const data = {
       method: "personal_sign",
-      params: [hexer.utf8ToHex(signText)],
+      params: [
+        "0x506c65617365207369676e2074686973206d65737361676520746f20636f6e6669726d20796f7572206964656e746974792e",
+      ],
     };
     const personalSignResult = await universalUi.current?.request(
       data,
@@ -88,9 +88,7 @@ function App() {
     setSignResult(personalSignResult);
     console.log(personalSignResult, "personalSignResult");
   };
-  const handleTextInput = (e) => {
-    setSignText(e.target.value);
-  };
+
   return (
     <>
       <h1 className="title">Dapp Demo</h1>
@@ -98,13 +96,6 @@ function App() {
       <Button type="primary" onClick={handleConnect} disabled={isConnected}>
         {text}
       </Button>
-      <br />
-      <br />
-      <Input
-        placeholder="sign message"
-        value={signText}
-        onChange={handleTextInput}
-      />
       <br />
       <br />
       <Button onClick={handlePersonalSign}>personal sign</Button>
